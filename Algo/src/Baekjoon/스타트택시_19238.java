@@ -1,42 +1,35 @@
 package Baekjoon;
 
 
-import java.util.Scanner;
 
 public class 스타트택시_19238 {
 	
-	static int N, M, E ;
-	static boolean[][] visited;
-
-
-
 	
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		N = sc.nextInt();
-		M = sc.nextInt();
-		E = sc.nextInt();
-
-		
-	}
-
-
-
-	private static void solution() {
-
-
-			
-	}
-
-
-
-
-
-	private static boolean check(int i, int j) {
-		if(i<N && j< N && i>=0 && j>= 0 )return true;
-		return false;
-	}
-		
-
+		Vehicle obj = new Car("Spark");
+		System.out.println(obj.getName());		
+	}	
+	
 
 }
+abstract class Vehicle{
+	String name;
+	abstract public String getName(String Val);
+	public String getName() {
+		return "Vehicle name: " +name;
+	}
+}
+
+class Car extends Vehicle{
+	public Car(String val) {
+		name = super.name = val;
+	}
+	public String getName(String val) {
+		return "Car name: " +val;
+		
+	}
+	public String getName(byte val[]) {
+		return "Car name :"+val;
+	}
+}
+
